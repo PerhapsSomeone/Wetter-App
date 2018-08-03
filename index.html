@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wettervorhersage</title>
+    <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styling.css">
+    <meta charset="utf-8">
+</head>
+<body>
+
+<section class="hero is-success">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Wettervorhersage
+            </h1>
+        </div>
+    </div>
+</section>
+<section id="cityinputdiv" class="container">
+    <div class="field">
+        <div class="control has-icons-left">
+            <input class="input is-rounded is-one-quarter is-large" id="city" type="text" placeholder="Stadtname oder PLZ">
+            <span class="icon is-large is-left"><i class="fas fa-home"></i></span>
+        </div>
+        <br />
+        <a class="button is-large is-outlined is-success is-rounded" onclick="updateWeather()">Suchen</a>
+    </div>
+</section>
+
+<section id="currentdiv" class="container fade-in is-paused">
+    <div class="field is-center">
+        <p class="largeText centered margin"><span id="currentTemp">--</span> °C</p>
+        <p class="largeText centered"><span id="currentpressure">--</span> % Luftfeuchtigkeit</p>
+        <p class="largeText centered"><span id="currentwindspeed">--</span> KM/h Wind aus <span id="currentwinddirection">--</span></p>
+        <p class="largeText centered margin"><span id="weathericon"><i class="fas fa-cloud"></i></span><span id="weatherdescription"> ---</span></p>
+    </div>
+    <span id="res">
+
+    </span>
+</section>
+
+<section id="forecastdiv" class="container fade-in is-paused">
+    <div class="columns is-center centered margin">
+        <div class="column forecastbox">
+            Morgen
+        </div>
+        <div class="column forecastbox">
+            Übermorgen
+        </div>
+        <div class="column forecastbox">
+            In drei Tagen
+        </div>
+    </div>
+
+    <div class="columns is-center centered">
+        <div class="column forecastbox">
+            <span id="onedayicon">--</span>
+            <br />
+        </div>
+        <div class="column forecastbox">
+            <span id="twodaysicon">--</span>
+        </div>
+        <div class="column forecastbox">
+            <span id="threedaysicon">--</span>
+        </div>
+    </div>
+
+    <div class="columns is-center centered">
+        <div class="column forecastbox">
+            <span id="onedaydesc">--</span>
+            <br />
+        </div>
+        <div class="column forecastbox">
+            <span id="twodaysdesc">--</span>
+        </div>
+        <div class="column forecastbox">
+            <span id="threedaysdesc">--</span>
+        </div>
+    </div>
+
+    <div class="columns is-center centered">
+        <div class="column forecastbox">
+            <span id="onedaytemp">--</span> °C
+            <br />
+        </div>
+        <div class="column forecastbox">
+            <span id="twodaystemp">--</span> °C
+        </div>
+        <div class="column forecastbox">
+            <span id="threedaystemp">--</span> °C
+        </div>
+    </div>
+
+    <div class="columns is-center centered">
+        <div class="column forecastbox">
+            <span id="onedayhumidity">--</span> % Luftfeuchtigkeit
+            <br />
+        </div>
+        <div class="column forecastbox">
+            <span id="twodayshumidity">--</span> % Luftfeuchtigkeit
+        </div>
+        <div class="column forecastbox">
+            <span id="threedayshumidity">--</span> % Luftfeuchtigkeit
+        </div>
+    </div>
+
+</section>
+<script src="js/weather.js"></script>
+</body>
+</html>
